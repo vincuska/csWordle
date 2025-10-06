@@ -4,7 +4,7 @@ Random rand = new Random();
 
 string answer = words[rand.Next(words.Count)];
 
-Console.WriteLine(answer);
+Console.WriteLine("Wordle!");
 
 int maxAttempts = 6;
 
