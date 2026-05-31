@@ -1,4 +1,4 @@
-﻿List<string> words = new List<string>(File.ReadAllLines("words.txt"));
+﻿List<string> words = new List<string>(File.ReadAllLines("words.txt").Select(word => word.Trim().ToLowerInvariant()));
 
 Random rand = new Random();
 
@@ -16,7 +16,7 @@ while (attempt < maxAttempts)
 {
     RenderBoard(maxAttempts - attempt);
     Console.Write("> ");
-    string? guess = Console.ReadLine();
+    string? guess = Console.ReadLine()?.Trim().ToLowerInvariant();
 
     if (guess == null || guess.Length != answer.Length || !words.Contains(guess))
     {
